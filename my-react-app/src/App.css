@@ -1,87 +1,176 @@
+/* =======================
+   GLOBAL STYLES
+========================= */
 body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #0f172a; /* dark navy */
+  color: #f8fafc; /* light text */
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #0f172a;
-  color: #f1f5f9;
-}
-
-.app {
-  display: flex;
-  height: 100vh;
-}
-
-.sidebar {
-  width: 220px;
-  background: #1e293b;
-  padding: 20px;
-}
-
-.sidebar .logo {
-  font-size: 20px;
-  margin-bottom: 30px;
-  font-weight: bold;
-}
-
-.sidebar ul {
-  list-style: none;
   padding: 0;
 }
 
-.sidebar li {
-  padding: 12px 10px;
-  margin: 8px 0;
-  background: #334155;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  cursor: pointer;
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: 600;
 }
 
-.sidebar li:hover {
-  background: #475569;
-}
-
-.main {
-  flex: 1;
-  padding: 20px;
-}
-
+/* =======================
+   NAVBAR
+========================= */
 .navbar {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  margin-bottom: 20px;
+  background: #1e293b; /* darker navy */
+  padding: 12px 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 
-.card {
+.navbar-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #38bdf8; /* cyan */
+  text-decoration: none;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 12px;
+}
+
+.navbar-links button {
+  background: #334155;
+  color: #f8fafc;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.navbar-links button:hover {
+  background: #38bdf8;
+  color: #0f172a;
+}
+
+/* =======================
+   WELCOME CARD
+========================= */
+.welcome-card {
+  margin: 20px;
+  background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+  padding: 20px;
+  border-radius: 14px;
+  color: white;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+}
+
+.welcome-card h1 {
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.welcome-card p {
+  font-size: 16px;
+  opacity: 0.9;
+  margin-top: 5px;
+}
+
+/* =======================
+   STATS CARDS GRID
+========================= */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  padding: 20px;
+}
+
+.stat-card {
+  background: #1e293b;
+  padding: 16px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.2s;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+}
+
+.stat-title {
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+.stat-value {
+  font-size: 26px;
+  font-weight: bold;
+  margin-top: 8px;
+  color: #38bdf8;
+}
+
+.stat-change {
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+.stat-up {
+  color: #22c55e; /* green */
+}
+
+.stat-down {
+  color: #ef4444; /* red */
+}
+
+/* =======================
+   CHART SECTION
+========================= */
+.chart-section {
+  margin: 20px;
+  padding: 20px;
+  background: #1e293b;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.chart-section h2 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: #f8fafc;
+}
+
+/* =======================
+   PROFILE CARD
+========================= */
+.profile-card {
+  margin: 20px;
   background: #1e293b;
   padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.5);
-  margin-bottom: 20px;
-}
-
-.stats-card {
+  border-radius: 14px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
-.stats-card .value {
-  font-size: 24px;
-  font-weight: bold;
+.profile-card img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
-.stats-card .up {
-  color: #4ade80;
+.profile-details h3 {
+  margin: 0;
+  font-size: 18px;
 }
 
-.stats-card .down {
-  color: #f87171;
-}
-
-.top-row, .bottom-row {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+.profile-details p {
+  margin: 2px 0;
+  font-size: 14px;
+  color: #94a3b8;
 }

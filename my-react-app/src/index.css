@@ -1,43 +1,46 @@
-/* Import Tailwind layers */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Custom fonts */
-body {
-  font-family: "Inter", system-ui, sans-serif;
-  background: linear-gradient(135deg, #eef2ff, #f0f9ff);
-  color: #222;
+/* Theme tokens */
+:root {
+  --surface: #0f172a; /* page bg */
+  --card: #111826;
+  --ink: #e6edf6;
+  --muted: #9fb2cc;
+  --primary: #3b82f6;
 }
 
-/* Smooth transitions */
-button,
-textarea {
-  transition: all 0.2s ease-in-out;
+/* Page + text colors */
+.bg-surface { background: var(--surface); }
+.text-ink { color: var(--ink); }
+.text-primary { color: var(--primary); }
+.muted { color: var(--muted); }
+
+/* Reusable “glass” card */
+.glass {
+  @apply rounded-2xl shadow-md;
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.06);
 }
 
-/* Button hover animation */
-button:hover:not(:disabled) {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+/* Card background panel */
+.bg-card {
+  background: var(--card);
 }
 
-/* Card animations */
-.result-card {
-  animation: fadeIn 0.4s ease-in-out forwards;
+/* Inputs & buttons */
+.input {
+  @apply w-full rounded-xl px-3 py-2 bg-card border border-white/10 outline-none;
+}
+.input:focus {
+  @apply ring-2 ring-blue-500/30;
+}
+.btn-primary {
+  @apply inline-flex items-center justify-center rounded-xl px-4 py-2 bg-blue-600 text-white hover:bg-blue-700 transition;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Loader pulse color */
-.loader-pulse {
-  animation: pulse 1.5s infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 0.6; }
-  50% { opacity: 1; }
+/* Section heading */
+.section-title {
+  @apply text-lg font-semibold mb-3;
 }
